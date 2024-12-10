@@ -4,20 +4,7 @@ import React,{useState,useEffect} from 'react';
 function MainScreen(){
 
 
-    // const tum1=[
-    //     {id:1,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-8.png?raw=true",logo:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%201%20(1).png?raw=true",title:"Bulbuli | Coke Studio Bangala | Season one | Ritu Raj X Nandita",subtitle1:"Coke Studio Bangala",subtitle2:"1.5M views 2 days ago"},
-    //     {id:2,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-9.png?raw=true",logo:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(2).png?raw=true",title:"infinic Note 12: AMOLED Hello G88 SoC",subtitle1:"ATC Android ToTo Com.",subtitle2:"4.2M views 2 days ago"},
-    //     {id:3,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-10.png?raw=true",logo:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(4).png?raw=true",title:"My First UX Design case study-This Got Me My first Job",subtitle1:"Saprashi prakash",subtitle2:"4.8k views 1 years ago"},
-    //     {id:4,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-11.png?raw=true",title:"My Mix",subtitle1:"Lopamudra Mitra ",subtitle2:"Anupam Roy"},
-    //     {id:5,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-4.png?raw=true",logo:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(4).png?raw=true",title:"UX Design -What is it? (From AJ & Smart)",subtitle1:"AJ &Smart",subtitle2:"150M views 3 years ago"},
-    //     {id:6,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-5.png?raw=true",title:"Mix -mombati|Mohan Sarif|Dhakaiya Dose| Mohib Ahsanft ",subtitle1:"mohan Sharif , Odd Signature,Shayan",subtitle2:"Chowdhury and more"},
-    //     {id:7,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-6.png?raw=true",logo:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(6).png?raw=true",title:"48 VISA -FREE",subtitle1:"NAdir On the go",subtitle2:"1.7 M views 1years ago"},
-    //     {id:8,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-7.png?raw=true",logo:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(5).png?raw=true",title:"14 Advanced Tips  to design Faster in Figma",subtitle1:"Mizko",subtitle2:"53k views 1 day ago"},
-    //     {id:9,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail.png?raw=true",logo:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(2).png?raw=true",title:"Third Class Muvie Pushpa 2 || GENUINS Reviews",subtitle1:"Sunny Bhavsar",subtitle2:"1.3k views 2 hours ago"},
-    //     {id:10,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-1.png?raw=true",logo:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(5).png?raw=true",title:"Glass Animal |Heat Weves",subtitle1:"Taj Tracks",subtitle2:"2.2M views 1 years ago"},
-    //     {id:11,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-2.png?raw=true",logo:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(1).png?raw=true",title:"Jatt Mehkana By Yo Yo Honey Singh",subtitle1:"Goku Uchiha Edits",subtitle2:"50k view 2days ago"},
-    //     {id:12,tum:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Thumbnail-3.png?raw=true",logo:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%201%20(4).png?raw=true",title:"The Weekend- Star boy (Slowed and Reverb)",subtitle1:"MeloyHub",subtitle2:"1.9M Views 1 years ago"},
-    // ]
+    
 
     const sec=[
         {id:1,tag:"All"},
@@ -37,7 +24,7 @@ function MainScreen(){
     const [videos, setVideos] = useState([]);
     useEffect(() => {
         // Fetch data from the API
-        fetch('http://localhost:3000/tum1')
+        fetch('https://youtube-api-1j64.onrender.com/tum1')
             .then((response) => response.json())
             .then((data) => setVideos(data)
         
@@ -86,3 +73,72 @@ function MainScreen(){
 }
 
 export default MainScreen
+
+
+
+// import './MainScreen.css';
+// import React, { useState, useEffect } from 'react';
+
+// function MainScreen() {
+//   const sec = [
+//     { id: 1, tag: "All" },
+//     { id: 2, tag: "Cook Studio" },
+//     { id: 3, tag: "UX" },
+//     { id: 4, tag: "Case Study" },
+//     { id: 5, tag: "Music" },
+//     { id: 6, tag: "Bangla Lofi" },
+//     { id: 7, tag: "Tour" },
+//     { id: 8, tag: "Tech" },
+//     { id: 9, tag: "Saintmartin" },
+//     { id: 10, tag: "iPhone 13" },
+//     { id: 11, tag: "User Interface Design" }
+//   ];
+
+//   const [videos, setVideos] = useState([]);
+//   const API_KEY = "AIzaSyA1n8g33rxXVu1quZFAKx9rOX9MS1Q9Ds0";  // Make sure to keep this safe and do not expose it in production
+
+//   useEffect(() => {
+//     // Fetch data from YouTube API
+//     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=Tech&key=${API_KEY}`)
+//       .then((response) => response.json())
+//       .then((data) => setVideos(data.items)) // Only set the items (video data)
+//       .catch((error) => console.error('Error fetching data from YouTube API:', error));
+//   }, []);
+
+//   return (
+//     <>
+//       <div className="mainscreen">
+//         <hr />
+//         <div className="selector">
+//           {sec.map((a) => (
+//             <div className="option1" key={a.id}>{a.tag}</div>
+//           ))}
+//         </div>
+//         <hr />
+//         <div className="thumbnail">
+//           {videos.map((tum) => (
+//             <div className="tumb1" key={tum.id.videoId}>
+//               <div className="tumimage">
+//                 <img src={tum.snippet.thumbnails.medium.url} alt={tum.snippet.title} />
+//               </div>
+//               <div className="descri">
+//                 <div className="first">
+//                   <div className="logo">
+//                     <img src={tum.snippet.thumbnails.default.url} alt="Channel logo" />
+//                   </div>
+//                   <div className="title">{tum.snippet.title}</div>
+//                 </div>
+//                 <div className="subtitle">
+//                   <div className="subtext">{tum.snippet.channelTitle}</div>
+//                   <div className="subtext">{new Date(tum.snippet.publishedAt).toLocaleDateString()}</div>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default MainScreen;
