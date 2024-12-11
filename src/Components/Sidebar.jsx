@@ -57,6 +57,11 @@ fetch('http://localhost:3000/Sidebar/Sec2')
 
         <>
         <div className="sidebar">
+        <div className="navfst">
+                <div> <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/hambarger.png?raw=true" alt="" /></div>
+               <div> <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Youtube%20logo.png?raw=true" alt="" /></div>
+            </div>
+
 {sec1.map((button)=> (
 
     

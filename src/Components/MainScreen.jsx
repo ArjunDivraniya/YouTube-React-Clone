@@ -22,20 +22,65 @@ function MainScreen(){
 
     ]
     const [videos, setVideos] = useState([]);
+   
+    const [query, setQuery] = useState(""); 
+    const [search,setSearch]=useState("");
+  
+const handleSearch = (e) => {
+    e.preventDefault();
+    setQuery(search);
+};
+
+    const API_KEY = "AIzaSyA1n8g33rxXVu1quZFAKx9rOX9MS1Q9Ds0";
     useEffect(() => {
         // Fetch data from the API
-        fetch('https://youtube-api-1j64.onrender.com/tum1')
+       if(query){ fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${search}&key=${API_KEY}`)
             .then((response) => response.json())
-            .then((data) => setVideos(data)
+            .then((data) => setVideos(data.items)
         
         )
             .catch((error) => console.error('Error fetching data:', error));
-    }, []);
+    }
+    }, [query]);
 
-
+    
     return(
 
         <>
+        <div className="yt">
+        <div className="navbar">
+            {/* <div className="navfst">
+                 <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/hambarger.png?raw=true" alt="" />
+                <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Youtube%20logo.png?raw=true" alt="" />
+            </div> */}
+            <div className="navsec">
+                <div className="serch">
+                <form onClick={handleSearch}>   
+            <input 
+              type="text"
+              placeholder="Search"
+              className='serchbox'
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <button type="submit">
+              <img
+                src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/search.png?raw=true"
+                alt="Search"
+              />
+            </button>
+          </form>
+                
+                </div>
+                <div className="mic"><img className='mic' src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/mic.png?raw=true" alt="" /></div>
+            </div>
+            <div className="navtrd">
+                <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/create.png?raw=true" alt="" />
+                <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/more.png?raw=true" alt="" />
+                <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/bell.png?raw=true" alt="" />
+                <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204-1.png?raw=true" alt="" />
+            </div>
+        </div>
         <div className="mainscreen">
             <hr />
             <div className="selector">
@@ -49,16 +94,16 @@ function MainScreen(){
     <hr />
 <div className="thumnail">
 {videos.map((tum)=> (
-  <div className="tumb1">
-  <div className="tumimage"><img src={tum.tum} alt="" /></div>
+  <div className="tumb1" key={tum.id.videoId}>
+  <div className="tumimage"><img src={tum.snippet.thumbnails.medium.url} alt={tum.snippet.title}/></div>
   <div className="descri">
       <div className="first">
-      <div className="logo"><img src={tum.logo}alt="" /></div>
-      <div className="title">{tum.title}</div>
+      <div className="logo"><img src={tum.snippet.thumbnails.default.url} alt="Channel logo" /></div>
+      <div className="title">{tum.snippet.title}</div>
   </div>
   <div className="subtitle">
-      <div className="subtexr">{tum.subtitle1}</div>
-      <div className="subtexr">{tum.subtitle2}</div>
+      <div className="subtexr">{tum.snippet.channelTitle}</div>
+      <div className="subtexr">{new Date(tum.snippet.publishedAt).toLocaleDateString()}</div>
   </div>
   </div>
 </div>
@@ -68,6 +113,8 @@ function MainScreen(){
   
 </div>
         </div>
+        </div>
+        
         </>
     )
 }

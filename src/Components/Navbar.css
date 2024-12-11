@@ -19,22 +19,18 @@ margin-top: 10px;
     border-radius: 10px;
     width: 500px;
     height: 48px;
-    border: 2px solid grey;
-
+   
 
 
 
 }
 .serch img{
     background-color: gray;
-    
-   
-    height: 48px;
+    height: 38px;
 }
 .serchbox{
-    width: 500px;
+    width: 430px;
     background-color: black;
-    border-radius: 14px;
     font-size: 20px;
     color: grey;
     font-weight: 500;

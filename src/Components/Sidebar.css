@@ -1,6 +1,6 @@
 .sidebar{
-    width: 15%;
-        margin-top: 20px; 
+    width: 100%;
+       
 }
 .imag img{
     height: 30px;
@@ -9,6 +9,7 @@
 .sec1{
     display: flex;
     margin-bottom: 10px;
+   
 }
 .text{
     margin-left: 30px;
@@ -60,4 +61,8 @@ hr{
 }
 .subscription :hover{
     opacity: 0.7;
+}
+.navfst{
+    display: flex;
+    margin-bottom: 20px; 
 }
